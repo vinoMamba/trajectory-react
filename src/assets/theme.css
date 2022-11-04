@@ -1,0 +1,31 @@
+/*亮色模式 */
+.light:root {
+  --color: #000;
+  --background: #fff;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color: #000;
+    --background: #fff;
+  }
+}
+
+/* 暗色模式 */
+.dark:root {
+  --color: #fff;
+  --background: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color: #fff;
+    --background: #000;
+  }
+}
+
+/* 托底 */
+:root {
+  --color: #000;
+  --background: #fff;
+}
