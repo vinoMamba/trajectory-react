@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import './App.css'
+import { useTheme } from './hooks/useTheme'
 
 export const App = () => {
+  const [_setTheme] = useTheme("dark")
   const [theme, setTheme] = useState("dark")
   const handleClick = (theme: 'dark' | 'light' | '') => {
     setTheme(theme)
