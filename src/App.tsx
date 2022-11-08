@@ -1,32 +1,12 @@
-import { useState } from 'react'
 import './App.css'
-import { useTheme } from './hooks/useTheme'
+import { useDark } from './hooks/useDark'
 
 export const App = () => {
-  const [_setTheme] = useTheme("dark")
-  const [theme, setTheme] = useState("dark")
-  const handleClick = (theme: 'dark' | 'light' | '') => {
-    setTheme(theme)
-    const root = window.document.documentElement
-    if (theme === 'dark') {
-      root.classList.remove('light')
-      root.classList.add('dark')
-    } else if (theme === 'light') {
-      root.classList.remove('dark')
-      root.classList.add('light')
-    } else {
-      root.classList.remove('dark')
-      root.classList.remove('light')
-    }
-    localStorage.setItem('theme', theme)
-  }
+  const [_, toggleDark] = useDark()
   return (
     <div className="App">
-      {JSON.stringify(theme)}
-      <button onClick={() => handleClick('dark')}>dark</button>
-      <button onClick={() => handleClick('light')}>light</button>
-      <button onClick={() => handleClick('')}>跟随系统</button>
-    </div>
+      <button onClick={() => toggleDark()}>toggle</button>
+    </div >
   )
 }
 
