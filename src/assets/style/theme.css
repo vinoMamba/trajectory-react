@@ -1,12 +1,19 @@
 /* 暗色模式 */
 .dark:root {
-  --color: #fff;
-  --background: #000;
+  --color-black: #000;
+  --color-black-1: #222;
+  ---color-white: #fff;
   color-scheme: dark;
+  --home-background: var(--color-black);
+  --login-background: var(--color-black-1);
+  --logo-color: var(--color-white);
 }
 
 /*default*/
 :root {
-  --color: #000;
-  --background: #fff;
+  --color-main: #1976d2;
+  --color-white: #fff;
+  --home-background: var(--color-main);
+  --login-background: var(--color-white);
+  --logo-color: var(--color-white);
 }
